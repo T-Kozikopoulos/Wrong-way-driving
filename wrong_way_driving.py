@@ -2,13 +2,11 @@ import pygame
 import time
 import random
 
-
 # Need to call '.init()' to start using the pygame library.
 pygame.init()
 
 display_width = 400
 display_height = 800
-
 white = (255, 255, 255)
 
 # Create a window.
@@ -19,9 +17,10 @@ clock = pygame.time.Clock()
 
 background = pygame.image.load_extended('background.jpg')
 player = pygame.image.load_extended('player.png')
+cars = pygame.image.load_extended('enemy.png')
+
 player_height = 84
 player_width = 84
-cars = pygame.image.load_extended('enemy.png')
 car_height = 64
 car_width = 100
 
@@ -67,7 +66,8 @@ def game_loop():
     x = display_width * 0.445
     y = display_height * 0.890
     x_change = 0
-
+    
+    # Randomize the spwn position of the each new enemy.
     cars_x = random.randrange(0, display_width - 85)
     cars_y = -30
 
